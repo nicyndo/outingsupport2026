@@ -813,7 +813,7 @@ img,svg{max-width:100%}
     var todayWIB = new Date(now.getTime() + 7*36e5).toISOString().slice(0,10);
     if (diff > 0){
       var daysLeft = Math.round((Date.parse("2026-12-04") - Date.parse(todayWIB)) / 864e5);
-      if (daysLeft >= 2) setStatus(daysLeft + " hari lagi");
+      if (daysLeft >= 2) setStatus(Math.floor(diff/864e5) + " hari lagi");
       else if (daysLeft === 1) setStatus("Besok berangkat!", "is-today");
       else setStatus("Hari ini berangkat!", "is-today");
     } else if (now < END){
